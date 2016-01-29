@@ -1,0 +1,7 @@
+config.json
+lambda-config.js
+node_modules/
+dist/
+dist.zip
+
+.idea/
