@@ -26,6 +26,13 @@ exports.handler = function (event, context) {
       text += convertName(comment.body) + "\n";
       text += comment.html_url;
       break;
+    case 'pull_request_review':
+      var review = msg.review;
+      text += review.user.login + ": \n";
+      text += 'Review State: ' + review.state + "\n";
+      text += convertName(review.body) + "\n";
+      text += review.html_url;
+      break;
     case 'issues':
       var issue = msg.issue;
       if (msg.action == 'opended' || msg.action == 'closed') {
